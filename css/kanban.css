@@ -1,45 +1,37 @@
 body {
-    background-color: rgb(242, 187, 187);
+    background-color: rgb(255, 255, 255);
   }
   
   .container {
-    width: 70%;
+    width: 90%;
     min-width: 50%;
     margin: auto;
     display: flex;
     flex-direction: column;
+
+    font-family: 'Raleway', sans-serif; 
   }
-  
-  .kanban-heading {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    font-family: sans-serif;
-  }
+
   
   .kanban-board {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
-    font-family: sans-serif;
+    justify-content: space-evenly;
+    align-content: space-around;
+    margin: 25px 50px 75px 100px;
+    gap:15px 10px;
+    
   }
   @media screen and (max-width: 600px) {
     .kanban-board {
     display: flex;
     flex-direction: column nowrap;
-    justify-self: center;
+    justify-content: center;
     align-content: space-evenly;
     
   }
   }
   
-  .kanban-heading-text {
-    font-size: 1.8rem;
-    background-color: tomato;
-    padding: 0.8rem 1.7rem;
-    border-radius: 0.5rem;
-    margin: 1rem;
-  }
   
   .kanban-block,
   .create-new-task-block {
@@ -50,26 +42,277 @@ body {
     border-radius: 0.3rem;
   }
   
+
   #todo {
-    background-color: #fec6d1;
+    border: 3px solid #eb5a56;
+
   }
   
   #inprogress {
-    background-color: #ffaf00;
+    border: 3px solid #ebeb56;
     /* display: none; */
   }
   
   #done {
-    background-color: #018b01;
-    /* display: none; */
-  }
-  #new {
-    background-color: #8c5ea1;
-    width:5%;
+    border: 3px solid #67eb56;
+    /* background-color: #67eb56; */
     /* display: none; */
   }
   
   #newname {
-    background-color: #8c5ea1;
+    border: 3px solid #56dceb;
     display: none;
+  }
+
+
+  .kanban-block-header{
+    display:flex;
+    justify-content: space-between;
+    gap:5px;
+  }
+
+  .delete-block{
+    background-color: #e7e7e7;
+    border: 2px solid #d1d1d1;  
+    justify-self: end;
+  }
+
+  .delete-block:hover {
+    background-color: #d1d1d1;
+    box-shadow: 5px 5px 5px rgba(180, 180, 180, 0.24),0 17px 50px 0 rgba(173, 173, 173, 0.19);
+
+  }
+ 
+
+
+  .task {
+    background-color: white;
+    /* Set the top margin as 25px, right margin as 50px, bottom margin as 75px, left margin as 100px */
+    margin: 1rem 0.2rem 1.2rem 0.2rem;
+
+    border-radius: 0.2rem;
+    /* Set the content in each task block's top and bottom paddings as 0.2rem, right and left paddings as 1rem */
+    padding: 0.2rem 1rem;
+    font-family: 'Montserrat', sans-serif;
+  
+    /* Using grid to display information of each task block including task-name,time-to-complete due-date"
+      rating-circle and priority-rating */
+    display: grid; 
+    grid-template-columns: auto 1fr; 
+    grid-template-rows: 1fr 0.5fr 0.5fr; 
+    gap: 0px 5px; 
+    grid-template-areas: 
+      "task-name delete-task"
+      "time-to-complete due-date"
+      "rating-circle priority-rating"; 
+
+     align-items: center;
+     color:#707070;
+    
+     border: 2px solid white;
+     /* add inner showdow to each task block */
+     -moz-box-shadow:    inset 0 0 10px #a3a3a3;
+     -webkit-box-shadow: inset 0 0 10px #b5b5b5;
+     box-shadow:         inset 0 0 10px #b6b6b6;
+    
+  }
+
+  .task-name { 
+    grid-area: task-name;
+    font-size:16px;
+    font-weight: bold;
+     }
+
+  .delete-task{
+    margin: 0rem 0.1rem 0rem 1rem;
+    padding: 0.1rem 0.2rem;
+    grid-area: delete-task;
+    justify-content: end;
+    width:2rem;
+    height:auto;
+  }
+  .time-to-complete { 
+    grid-area: time-to-complete;
+    font-size:7px;
+  }
+  .due-date { 
+    grid-area: due-date;
+    font-size:7px;
+  }
+  .rating-circle { grid-area: rating-circle; }
+  .priority-rating { 
+    grid-area: priority-rating;
+    font-size:10px;
+    font-weight: bold;
+                   }
+  #pr1{
+    color:#f44336;
+  }
+  #pr2{
+    color:#e1e123;
+  }
+  
+  .rating-circle {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        box-shadow: 2px 2px 2px grey;
+      }
+      #rc1{
+        background-color:#f44336;
+      }
+      #rc2{
+        background-color:#e1e123;
+      }
+  
+
+/* Set the css style for create new task button in the to-do kanban block */
+
+  #task-button {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0.8rem 0rem 0.1rem 0rem;
+    background-color: white;
+    border-radius: 0.2rem;
+    width: 100%;
+    border: 0.1rem solid #f44336;
+    padding: 0.5rem 2.7rem;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+  }
+  
+  #task-button:hover {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  /* Set the css style for create new kanban block button below the three exsiting kanban block  */
+  #add-block{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0.8rem 0rem 0.1rem 0rem;
+    background-color:#ffffff ;
+    border:none;
+    border-radius: 0.2rem;
+    padding: 0.1rem 0.2rem;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    color:#707070;
+    font-weight:bold
+
+  }
+  
+  #add-block:hover{
+    color:rgb(255, 0, 0);
+
+  }
+
+  /* Set the css style for create new task section */
+  .create-new-task-block {
+    display: none;
+    /* display: flex; */
+    background: #f44336;
+    width: 64.4%;
+    flex-direction: column;
+  }
+  
+  .form-row {
+    display: flex;
+    flex-direction: row;
+    margin: 0.2rem;
+  }
+  
+  .form-row-label {
+    width: 15%;
+    padding: 0.2rem;
+    padding-right: 0.5rem;
+    border: 0.1rem solid black;
+    border-right: 0;
+    border-radius: 0.2rem 0rem 0rem 0.2rem;
+  }
+  
+  .form-row-input {
+    border: 0.1rem solid black;
+    border-radius: 0rem 0.2rem 0.2rem 0rem;
+    width: 85%;
+  }
+  
+  textarea {
+    resize: none;
+  }
+  
+  .form-row-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.2rem;
+  }
+  
+  #edit-button,
+  #save-button,
+  #cancel-button {
+    margin: 0.2rem 0rem 0.1rem 0rem;
+    background-color: white;
+    border-radius: 0.2rem;
+    width: 49.2%;
+    border: 0.25rem solid black;
+    padding: 0.5rem 2.7rem;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+  }
+  
+  #edit-button {
+    display: none;
+  }
+
+/* Adjust input in kanban-block-title for each kanban block */
+  .kanban-block input[type=text] {
+    font-family: 'Raleway', sans-serif; 
+    font-weight: bold;
+    width: 130px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 12px 10px 12px 10px;
+    transition: width 0.4s ease-in-out;
+
+    background-image: url(../icon/editicon3.png);
+    background-size: 20px 20px;
+   background-position: 100px 12px;
+   background-repeat: no-repeat;
+
+    box-shadow:2px 2px 2px #707070 ;
+    
+  
+  }
+
+  input[type=text]:focus {
+    width: 100%;
+  }
+
+  #todo input{
+    background-color: #eb5a56;
+    border: 2px solid #eb5a56;
+    color:#b92722;
+
+  }
+  
+  #inprogress input{
+    background-color: #e1e123;
+    border: 2px solid #e1e123;
+    color: #98980b;
+
+    
+  }
+  
+  #done input{
+    background-color: #67eb56;
+    border: 2px solid #67eb56;
+    color:#35a926 ;
+
+  }
+  
+  #newname input{
+    background-color: #56dceb;
+    border: 2px solid #56dceb;
+    color:#1b94a1 ;
+
   }

@@ -1,1 +1,142 @@
-<h1>Hello, this is reading lists</h1>
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Web app</title>
+  <!--Google fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Quicksand:wght@300&family=Raleway&display=swap"
+    rel="stylesheet">
+  <!--Google fonts-->
+
+  <!--Css style link-->
+  <link href="css/style_index.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+  <div class="container">
+    <!--side menu-->
+    <div class="sidenav_container">
+      <div class="nav">
+        <!--user's personal information-->
+        <div class="user_info">
+          <div class="user_img"><img src="image/Profile picture.png" alt="profile pic" /></div>
+          <div class="user_text">
+            <p>Good Day</p>
+            <h2>Vitaliy D.</h2>
+          </div>
+        </div>
+        <div class="line"></div>
+        <!--Menu-dashboard_reading lists_clock-->
+        <div class="title">
+          <p>Menu</p>
+        </div>
+
+
+        <div class="menu">
+          <!--Menu-dashboard-->
+          <div class="item">
+            <div class="light"></div>
+            <div class="licon">
+              <a class="menu_iconbutton" href="index.html">
+                <img class="iconimg" src="icon/dashboardicon.png" alt="Dashboard icon">
+              </a>
+            </div>
+            <a class="menu_textbutton" href="index.html">Dashboard</a>
+          </div>
+          <!--Menu-reading lists-->
+          <div class="item">
+            <div class="light"></div>
+            <div class="licon">
+              <a class="menu_iconbutton" href="readinglists.html">
+                <img class="iconimg" src="icon/readinglistsicon.png" alt="Reading Lists icon">
+              </a>
+            </div>
+            <a class="menu_textbutton" href="readinglists.html">Reading Lists</a>
+          </div>
+          <!--Menu-clock-->
+          <div class="item">
+            <div class="light"></div>
+            <div class="licon">
+              <a class="menu_iconbutton" href="timer.html">
+              <img class="iconimg" src="icon/timericon.png" alt="Pomodoro Timer icon">
+            </a>
+            </div>
+            <a class="menu_textbutton" href="timer.html">Pomodoro Timer</a>
+
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="title">
+          <p>Music</p>
+        </div>
+        <div class="serve">
+          <div class="item">
+            <a class="menu_textbutton" href="spotify.html">Spotify</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--side menu-->
+
+    <!--up menu-->
+    <div class="upnav_container">
+      <!--Spotify music lists embeded-->
+      <div class="embedded_music_player">
+        
+
+
+        <iframe style="border-radius:12px"
+          src="https://open.spotify.com/embed/playlist/37i9dQZF1DWSSrwtip3vZP?utm_source=generator&theme=0"
+          title="Study mode" allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      </div>
+
+
+    </div>
+    <!--up menu-->
+
+<!-- main content
+ Reference-Retrieved from:https://www.youtube.com/watch?v=JaMCxVWtW58(https://codepen.io/bradtraversy/pen/OrmKWZ) -->
+
+    <div class="main_container">
+        <div class="container mt-4">
+            <h1 class="display-4 text-center">
+              <i class="fas fa-book-open text-primary"></i> My<span class="text-primary">Book</span>List</h1>
+              <form id="book-form">
+                <div class="form-group">
+                  <label for="title">Title</label>
+                  <input type="text" id="title" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="author">Author</label>
+                  <input type="text" id="author" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="isbn">ISBN#</label>
+                  <input type="text" id="isbn" class="form-control">
+                </div>
+                <input type="submit" value="Add Book" class="btn btn-primary btn-block">
+              </form>
+              <table class="table table-striped mt-5">
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>ISBN#</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="book-list"></tbody>
+              </table>
+          </div>
+      
+    </div>
+  </div>
+  <script src="javascript/listcreator.js"></script>
+</body>
+
+</html>
