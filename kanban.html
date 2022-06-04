@@ -18,6 +18,20 @@
 <body>
   <!-- Reference: Retrieved from: https://codepen.io/karthikdevarticles/pen/PopxPwO  -->
   <div class="container">
+    <div class="upnav">
+       <a class="menu_iconbutton" href="index.html">
+        <img class="iconimg" src="icon/dashboardicon.png" alt="Dashboard icon">
+      </a>
+
+      <div class="embedded_music_player">
+        <iframe title='Chill study music playlist' id="upnavplaylist" style="border-radius:12px"
+          src="" width="100%"
+          height="80" frameBorder="0" allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      </div>
+
+
+    </div>
     <div class="kanban-board">
 
       <!--        Defult to-do block   -->
@@ -25,8 +39,6 @@
       <div class="kanban-block" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
         <div class="kanban-block-header">
           <input type="text" value='To do'>
-          <button class="delete-block" onclick="deleteblock()"><img src="icon/deleteiconred.png" alt='delete-icon'
-              width="13px" height="13px"></button>
         </div>
 
         <div class="task-button-block">
@@ -36,31 +48,36 @@
         <!--        Defult task block(task1/2) for testing   -->
         <!--    task1    -->
         <div class="task" id="task1" draggable="true" ondragstart="drag(event)">
-          <p class='task-name'>Task 1</p>
-          <button class="delete-task" onclick="deletetask('task1')">
-            <img src="icon/deleteiconred.png" alt='delete-icon' width="13px" height="13px">
-          </button>
+          <span class="task-hearder">
+            <p class='task-name'>Task 1</p>
+            <button class="delete-task" onclick="deletetask('task1')">
+              <img src="icon/deleteiconred.png" alt='delete-icon' width="13px" height="13px">
+            </button>
+          </span>
           <p class='time-to-complete'>1hr</p>
           <p class='due-date'>Due date:2023/06/11</p>
-          <div class="rating-circle" id='rc1'></div>
-          <p class='priority-rating' id='pr1'>High</p>
+          <div class="rating-circle"></div>
+          <p class='priority-rating'>High</p>
         </div>
 
         <!--    task2    -->
         <div class="task" id="task2" draggable="true" ondragstart="drag(event)">
-          <p class='task-name'>Task 2</p>
-          <button class="delete-task" onclick="deletetask('task2')">
-            <img src="icon/deleteiconred.png" alt='delete-icon' width="13px" height="13px">
-          </button>
+          <span class="task-hearder">
+            <p class='task-name'>Task 2</p>
+            <button class="delete-task" onclick="deletetask('task2')">
+              <img src="icon/deleteiconred.png" alt='delete-icon' width="13px" height="13px">
+            </button>
+          </span>
           <p class='time-to-complete'>2hr</p>
           <p class='due-date'>Due date:2023/06/11</p>
-          <div class="rating-circle" id='rc2'></div>
-          <p class='priority-rating' id='pr2'>Medium</p>
+          <div class="rating-circle"></div>
+          <p class='priority-rating'>Medium</p>
         </div>
-
 
       </div>
 
+
+     
 
 
       <!--      Defult in-progress block   -->
@@ -68,41 +85,45 @@
       <div class="kanban-block" id="inprogress" ondrop="drop(event)" ondragover="allowDrop(event)">
         <div class="kanban-block-header">
           <input type="text" value='In Progress'>
-          <button class="delete-block" onclick="deleteblockinprogress()"><img src="icon/deleteiconred.png"
+          <button class="delete-block" onclick="deletetask('inprogress')"><img src="icon/deleteiconred.png"
               alt='delete-icon' width="13px" height="13px"></button>
         </div>
       </div>
+      
 
       <!--      Defult done block   -->
       <div class="kanban-block" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
         <div class="kanban-block-header">
           <input type="text" value='Done'>
-          <button class="delete-block" onclick="deleteblockdone()"><img src="icon/deleteiconred.png" alt='delete-icon'
+          <button class="delete-block" onclick="deletetask('done')"><img src="icon/deleteiconred.png" alt='delete-icon'
               width="13px" height="13px"></button>
         </div>
       </div>
 
+    </div>
+
+    <!--      Added new block   -->
+    <div id="new">
+      <button id="add-block" onclick="addblock()">
+        <img src="icon/addblockicon.png" alt='add-new-block-icon'>
+        <p>Add new block</p>
+      </button>
+    </div>
+
+    <span id="addedblock">
       <!--      Hidden new block   -->
-      <div class="kanban-block" id="newname" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <!-- <div class="kanban-block" id="newname" ondrop="drop(event)" ondragover="allowDrop(event)">
         <div class="kanban-block-header">
           <input type="text" value='Other'>
-          <button class="delete-block" onclick="deleteblocknewname()"><img src="icon/deleteiconred.png"
+          <button class="delete-block" onclick="deletetask('newname')"><img src="icon/deleteiconred.png"
               alt='delete-icon' width="13px" height="13px"></button>
-        </div>
-      </div>
-
-      <!--      Added new block   -->
-      <div id="new" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <button id="add-block" onclick="addblock()">
-          <img src="icon/addblockicon.png" alt='add-new-block-icon' width='20px'>
-          <p>Add new block</p>
-        </button>
-      </div>
+        </div> -->
+    </span>
+  
 
 
-
-<!-- Task list templete -->
-      <!-- <form id="taskform">
+    <!-- Task list templete -->
+    <!-- <form id="taskform">
     <label for="task">Task:</label>
     <input type="text" name="task" id="taskInput">
 
@@ -111,18 +132,18 @@
     <label for="dueDate">Due Date: </label>
     <input type="date" name="dueDate" id="dueDateInput">
     <br> -->
-      <!-- Time input -->
-      <!-- <label for="completionTime">Completion Time: </label>
+    <!-- Time input -->
+    <!-- <label for="completionTime">Completion Time: </label>
     <input type="time" name="completionTime" id="completionTimeInput">
 
     <br> -->
 
-      <!-- <label for="estimatedTime">Estimated completion time (in mins):</label>
+    <!-- <label for="estimatedTime">Estimated completion time (in mins):</label>
     <input type="number" name="estimatedTime" id="estimatedTimeInput"> -->
-      <!-- Priority -->
-      <!-- <br> -->
+    <!-- Priority -->
+    <!-- <br> -->
 
-      <!-- <label for="priority">Task Priority:</label>
+    <!-- <label for="priority">Task Priority:</label>
     <select name="prority" id="priorityInput">
       <option value="">Select one</option>
       <option value="Low">Low</option>
@@ -130,69 +151,58 @@
       <option value="High">High</option>
     </select> -->
 
-      <!-- <br> -->
+    <!-- <br> -->
 
-      <!-- <button id='submit' type="submit">Submit</button>
+    <!-- <button id='submit' type="submit">Submit</button>
   </form>
   <ul id="tasklist">
   </ul> -->
 
-      <div class="create-new-task-block" id="create-new-task-block">
-        <strong>New Task</strong>
-        <span class="form-row">
-          <label class="form-row-label" for="task-name">Task</label>
-          <input class="form-row-input" type="text" name="task-name" id="task-name">
-        </span>
-        <span class="form-row">
-          <!-- Date input -->
-          <label for="dueDate">Due Date: </label>
-          <input type="date" name="dueDate" id="dueDateInput">
-          <br>
-        </span>
-        <span class="form-row">
-          <!-- Time input -->
-          <label for="completionTime">Completion Time: </label>
-          <input type="time" name="completionTime" id="completionTimeInput">
-          <br>
-        </span>
+    <div class="create-new-task-block" id="create-new-task-block">
+      <strong>New Task</strong>
+      <span class="form-row">
+        <label class="form-row-label" for="task-name">Task</label>
+        <input class="form-row-input" type="text" name="task-name" id="task-name">
+      </span>
+      <span class="form-row">
+        <!-- Date input -->
+        <label for="dueDate">Due Date: </label>
+        <input type="date" name="dueDate" id="dueDateInput">
+        <br>
+      </span>
+      <span class="form-row">
+        <!-- Time input -->
+        <label for="completionTime">Completion Time: </label>
+        <input type="time" name="completionTime" id="completionTimeInput">
+        <br>
+      </span>
 
-        <span class="form-row">
-          <!-- Estimated Time input -->
-          <label for="estimatedTime">Estimated completion time (in mins):</label>
-          <input type="number" name="estimatedTime" id="estimatedTimeInput">
-          <br>
-        </span>
+      <span class="form-row">
+        <!-- Estimated Time input -->
+        <label for="estimatedTime">Estimated completion time (in mins):</label>
+        <input type="number" name="estimatedTime" id="estimatedTimeInput">
+        <br>
+      </span>
 
 
-        <span class="form-row">
-          <select name="prority" id="priorityInput">
-            <option value="">Rates task prority</option>
-            <option value="Low">Low</option>
-            <option value="Medium">Medium</option>
-            <option value="High">High</option>
-          </select>
+      <span class="form-row">
+        <select name="prority" id="priorityInput">
+          <option value="">Rates task prority</option>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
 
-        </span>
-        <span class="form-row-buttons">
-          <button id="edit-button" onclick="editTask()">Edit</span>
-        <button id="save-button" onclick="saveTask()">Save</span>
-          <button id="cancel-button" onclick="createTask()">Cancel</span>
-            </span>
-      </div>
+      </span>
+      <span class="form-row-buttons">
+        <button id="edit-button" onclick="editTask()">Edit</span>
+      <button id="save-button" onclick="saveTask()">Save</span>
+        <button id="cancel-button" onclick="createTask()">Cancel</span>
+          </span>
     </div>
   </div>
+  </div>
   <script src="javascript/kanban.js"></script>
-
-
-
-
-
-
-
-
-
-
-
 
   <script src="javascript/addtask.js"></script>
   <script src="javascript/playlistrefresh.js"></script>

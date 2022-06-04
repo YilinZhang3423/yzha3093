@@ -1,3 +1,14 @@
+
+//Loads the certain playlist chosen from user
+window.addEventListener('load', (event) => {
+    const navsrc = localStorage.getItem('thesrc');
+    var theplaylist = document.getElementById("upnavplaylist");
+    theplaylist.src = navsrc;
+});
+
+
+
+
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
 }
@@ -11,19 +22,32 @@ function drop(ev) {
     var data = ev.dataTransfer.getData("text");
     ev.currentTarget.appendChild(document.getElementById(data));
 }
-//show the create new task section bu hidding the inprogress and done block
+
+
+//Showing the create new task section when hidding the other kanban blocks
 function createTask(){
-    var x = document.getElementById("inprogress");
-    var y = document.getElementById("done");
-    var z = document.getElementById("create-new-task-block");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-        y.style.display = "block";
-        z.style.display = "none";
+    var inprogressblock = document.getElementById("inprogress");
+    var doneblock = document.getElementById("done");
+    var taskblock = document.getElementById("create-new-task-block");
+    var newnamekblock = document.getElementById("addedblock");
+    var newblock = document.getElementById("new");
+
+
+
+    if (inprogressblock.style.display === "none") {
+        inprogressblock.style.display = "block";
+        doneblock.style.display = "block";
+        newnamekblock.style.display = "flex";
+        newblock.style.display = "flex";
+        taskblock.style.display = "none";
+   
+   
     } else {
-        x.style.display = "none";
-        y.style.display = "none";
-        z.style.display = "flex";
+        inprogressblock.style.display = "none";
+        doneblock.style.display = "none";
+        taskblock.style.display = "flex";
+        newnamekblock.style.display = "none";
+        newblock.style.display = "none";
     }
 }
 
@@ -44,36 +68,38 @@ function saveTask(){
     var taskName = document.getElementById("task-name").value;
     var completetime =  document.getElementById("estimatedTimeInput").value;
     var duedate =  document.getElementById("dueDateInput").value;
-    // var ratingCircle =  document.getElementById("rating-circle").value;
+
     var priorityRating =  document.getElementById("priorityInput").value;
-
-    let addedtaskclass=taskName.toLowerCase().split(" ").join("");
-
+// create a variable to store task class accroding to input task name
+   let addedtaskclass=taskName.toLowerCase().split(" ").join("");
    
 //Add the new task block into the to-do block according to user input
-    todo.innerHTML += `
+const list = document.querySelector('#todo');
+
+const row = document.createElement('div');
+
+    row.innerHTML += `
     <div class="task" id="${addedtaskclass}" draggable="true" ondragstart="drag(event)">
+    <span class="task-hearder">
         <p class='task-name'>${taskName}</p>
         <button class="delete-task" onclick="deletetask('${addedtaskclass}')">
         <img src="icon/deleteiconred.png" alt='delete-icon' width="13px" height="13px">
       </button>
+      </span>
           <p class='time-to-complete'>${completetime}min</p>
           <p class='due-date'>Due date:${duedate}</p>
           <div class="rating-circle" id='rc1'></div>
           <p class='priority-rating' id='pr1'>${priorityRating}</p>
     </div>
-    
-    `
+    `;
 
-
-    // prioritycolorchange()
+    list.appendChild(row);
 
         //Change color of rating-circle and priority-rating text in css
+       // prioritycolorchange();
       
 }
-function test(){
-    priorityRating.style.color="green";
-}
+
 
 function prioritycolorchange(){
     var ratingCircle =  document.getElementById("rating-circle").value;
@@ -113,31 +139,39 @@ function editTask(){
 }
 
 //delete kanban block function
-function deleteblockdone(){
-    var x = document.getElementById("done");
-    x.remove();
-    }
+// function deleteblockdone(){
+//     var x = document.getElementById("done");
+//     x.remove();
+//     }
 
-function deleteblockinprogress(){
-var x = document.getElementById("inprogress");
-x.remove();
-}
+// function deleteblockinprogress(){
+// var x = document.getElementById("inprogress");
+// x.remove();
+// }
 
-function deleteblocknewname(){
-    var x = document.getElementById("newname");
-    x.remove();
-    }
+// function deleteblocknewname(){
+//     var x = document.getElementById("newname");
+//     x.remove();
+//     }
 
 
-//delete task1/2 function
+//delete function
 function deletetask(taskid){
     var x = document.getElementById(taskid);
-    x.remove();
+    //To ask the user doulb-check if they actually want to delete the element
+    //window.confirm() instructs the browser to display a dialog with an optional message, and to wait until the user either confirms or cancels the dialog.
+    if(confirm('Confirm to delete '+taskid+"?")){x.remove();}
     }
 
 function addblock(){
-var x = document.getElementById("newname");
-var y = document.getElementById("new");
-y.style.display = "none";
-x.style.display = "block";
+//Add the new task block into the to-do block according to user input
+const list = document.querySelector('#addedblock');
+    list.innerHTML += `
+    <div class="kanban-block" id="newname" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <div class="kanban-block-header">
+            <input type="text" value='Other'>
+            <button class="delete-block" onclick="deletetask('newname')"><img src="icon/deleteiconred.png"
+                alt='delete-icon' width="13px" height="13px"></button>
+          </div>
+    `;
 }

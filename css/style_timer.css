@@ -11,14 +11,7 @@
       box-sizing: border-box;
     }
     
-    body {
-      /* height: 100vh;
-      padding: 35px;
-    
-      background: rgb(243, 243, 243);
-      color: #131313; */
-      font-family: "Montserrat", sans-serif;
-    }
+  
     h1 {
       margin: 15px 0;
       font-weight: 900;
@@ -104,7 +97,7 @@
       transition: 0.5s;
       transform: rotate(-90deg);
       transform-origin: 50% 50%;
-      stroke: rgb(51, 65, 255);
+      stroke: rgb(255, 96, 125);
     }
     
     
@@ -128,12 +121,28 @@
     }
     
     @media screen and (min-width: 768px) {
-      body {
+      .container{
         display: grid;
+        grid-template-columns: auto 1fr 2fr ;
+        grid-template-rows: 50px 80px 2fr 1.5fr;
         grid-template-areas:
-          "head head"
-          "clock form btns";
+          "sidnav_container  upnav_container upnav_container "
+          "sidnav_container head head "
+          "sidnav_container clock form "
+          "sidnav_container  btns  form";
       }
+
+      .upnav_container {
+        grid-area: upnav_container;
+        display: flex;
+        background-color: #4f0a52;
+        justify-content: right;
+      }
+      
+      .sidenav_container {
+        grid-area: sidnav_container;
+      }
+      
       .btn-group {
         grid-area: btns;
         justify-content: center;
