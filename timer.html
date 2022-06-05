@@ -100,41 +100,41 @@
           Retrieved from:https://www.youtube.com/watch?v=MtYR2vCs2R0(https://github.com/abhik-b/pomodro-timer)
           2.Pomodoro Timer | Javascript Beginner Project Tutorial
           Retrieved from:https://www.youtube.com/watch?v=vAEG6OVCass -->
-    
-          <div class="main-container">
-    <div class="clocktext">
-    <h1>Pomodro ⏲ with 🛎</h1>
-    <h3>Default times = 25 mins on, 5 mins off (x4) then 30 mins break</h3>
+
+    <div class="main_container">
+      <div class="clocktext">
+        <h1>Pomodro ⏲ with 🛎</h1>
+        <h3>Default times = 25 mins on, 5 mins off (x4) then 30 mins break</h3>
+      </div>
+
+      <figure class="clock">
+        <div class="mins">0</div>
+        <div>:</div>
+        <div class="secs">00</div>
+        <audio src="http://soundbible.com/mp3/service-bell_daniel_simion.mp3"></audio>
+        <svg class="progress-ring" height="120" width="120">
+          <circle class="progress-ring__circle" stroke-width="8" fill="transparent" r="50" cx="60" cy="60" />
+        </svg>
+      </figure>
+
+      <div class="btn-group">
+        <button class="start">Start focus</button>
+        <button class="reset">Reset</button>
+        <button class="pause">Pause</button>
+      </div>
+
+      <form action=".">
+        <label for="focusTime">Focus Time</label>
+        <input type="number" value="25" id="focusTime" />
+        <label for="breakTime">Break Time</label>
+        <input type="number" value="5" id="breakTime" />
+        <label for="sessionNum">Seesion Recorded</label>
+        <input type="number" value="0" id="sessionNum" />
+        <button type="submit">Save settings</button>
+
+      </form>
+
     </div>
-
-    <figure class="clock">
-      <div class="mins">0</div>
-      <div>:</div>
-      <div class="secs">00</div>
-      <audio src="http://soundbible.com/mp3/service-bell_daniel_simion.mp3"></audio>
-      <svg class="progress-ring" height="120" width="120">
-        <circle class="progress-ring__circle" stroke-width="8" fill="transparent" r="50" cx="60" cy="60" />
-      </svg>
-    </figure>
-
-    <div class="btn-group">
-      <button class="start">Start focus</button>
-      <button class="reset">Reset</button>
-      <button class="pause">Pause</button>
-    </div>
-
-    <form action=".">
-      <label for="focusTime">Focus Time</label>
-      <input type="number" value="25" id="focusTime" />
-      <label for="breakTime">Break Time</label>
-      <input type="number" value="5" id="breakTime" />
-      <label for="sessionNum">Seesion Recorded</label>
-      <input type="number" value="0" id="sessionNum" />
-      <button type="submit">Save settings</button>
-      
-    </form>
-
-  </div>
   </div>
   <script src="javascript/index.js"></script>
   <script src="javascript/timer.js"></script>

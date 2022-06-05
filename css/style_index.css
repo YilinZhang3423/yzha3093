@@ -30,12 +30,12 @@
 }
 
 .main_container {
-  background-color: aqua;
+  
   grid-area: main_container;
-  display:flex;
+  /* display:flex;
   flex-direction: column;
   justify-items: center;
-  align-content: center;
+  align-content: center; */
 }
 
 
@@ -456,8 +456,12 @@ background: linear-gradient(120deg, rgb(235, 185, 185) 0%, rgb(232, 165, 77) 30%
     "kanbanimg button";
 }
 
-.kanbanDescriptionImg{
+
+
+.kanbanDescriptionImg img{
   grid-area:kanbanimg;
+  width:400px;
+  
 }
 .kanbanDescriptionText{
   grid-area:kanbantext;
@@ -489,6 +493,7 @@ background: linear-gradient(120deg, rgb(235, 185, 185) 0%, rgb(232, 165, 77) 30%
   
   .temporaryKanban button,.localStoredKanban button{
     grid-area:button;
+    
   }
 
 }

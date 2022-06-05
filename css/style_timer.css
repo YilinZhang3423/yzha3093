@@ -10,7 +10,7 @@
     
       box-sizing: border-box;
     }
-    
+   
   
     h1 {
       margin: 15px 0;
@@ -128,7 +128,8 @@
     
     
     @media screen and (min-width: 768px) {
-      .main-container{
+      .main_container{
+        /* background-color: #5659eb; */
         display: grid;
         grid-template-columns:1fr 1fr ;
         grid-template-rows: 80px 2fr 1.5fr;
@@ -173,7 +174,8 @@
     }
 
     @media screen and (max-width: 768px) {
-      .main-container{
+      .main_container{
+        background-color: #5659eb;
         display: grid;
         grid-template-columns: 1fr ;
         grid-template-rows: 80px 1fr 0.1fr 0.6fr;

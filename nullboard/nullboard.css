@@ -151,6 +151,7 @@ body {
     margin-bottom: 20px;
   }
 
+  
 
 /***/
 @keyframes shake {
@@ -213,14 +214,15 @@ body.dragging {
 
 /***/
 .board {
-    min-width: calc( var(--lw) * 1px );
+    
+    min-width: calc( var(--lw) * 1.5px );
 
     width: -moz-max-content;    /* firefox */
     width: -webkit-max-content; /* chrome  */
     width: intrinsic;           /* safari  */
 
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
 
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -229,6 +231,7 @@ body.dragging {
     -ms-user-select: none;
     user-select: none;
 }
+
 
 body.crowded .board {
     margin-top: 28px;
