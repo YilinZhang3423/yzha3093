@@ -5,6 +5,20 @@ window.addEventListener('load', (event) => {
   theplaylist.src = navsrc;
 });
 
+//The function to open all the links in the list
+function openwindow(){
+for(let i = 0 ; i < linkstoopen.length ; i++){
+  window.open(linkstoopen[i], '_wnd' + i);  
+}
+
+}
+
+  
+
+//A array to save all the user input value(url string)
+const linkstoopen = [];
+
+
 const listsContainer = document.querySelector('[data-lists]')
 const newListForm = document.querySelector('[data-new-list-form]')
 const newListInput = document.querySelector('[data-new-list-input]')
@@ -28,6 +42,9 @@ listsContainer.addEventListener('click', e => {
     selectedListId = e.target.dataset.listId
     saveAndRender()
   }
+   linkstoopen.length = 0;
+   document.location.reload(true);
+
 })
 
 tasksContainer.addEventListener('click', e => {
@@ -114,15 +131,22 @@ function renderTasks(selectedList) {
     checkbox.id = task.id
     checkbox.checked = task.complete
     const label = taskElement.querySelector('label')
+    const links = taskElement.querySelector('.inputlinks')
+
+
     label.htmlFor = task.id
-    label.append(task.name)
-    tasksContainer.appendChild(taskElement)
+    links.append(task.name);
+
+//Save the input value to links to open
+    linkstoopen.push(task.name);
+
+    tasksContainer.appendChild(taskElement);
   })
 }
 
 function renderTaskCount(selectedList) {
   const incompleteTaskCount = selectedList.tasks.filter(task => !task.complete).length
-  const taskString = incompleteTaskCount === 1 ? "task" : "tasks"
+  const taskString = incompleteTaskCount === 1 ? "readings" : "readings"
   listCountElement.innerText = `${incompleteTaskCount} ${taskString} remaining`
 }
 

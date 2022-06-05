@@ -91,8 +91,9 @@
       <!--up menu-->
       <div class="main_container">
     <div class="all-tasks">
-      <h2 class="task-list-title">My lists</h2>
+      <h2 class="task-list-title">My Reading lists</h2>
       <ul class="task-list" data-lists></ul>
+      
 
       <form action="" data-new-list-form>
         <input 
@@ -108,9 +109,11 @@
 
     <div class="todo-list" data-list-display-container>
       <div class="todo-header">
-        <h2 class="list-title" data-list-title>YouTube</h2>
+        <h2 class="list-title" data-list-title> <button class="btn open" aria-label="open links" onclick="openwindow()">++</button></h2>
         <p class="task-count" data-list-count>3 tasks remaining</p>
+        <button class="btn open" aria-label="open links" onclick="openwindow()">Open All</button>
       </div>
+      <!--  -->
 
       <div class="todo-body">
         <div class="tasks" data-tasks></div>
@@ -121,11 +124,12 @@
                   type="text"
                   data-new-task-input
                   class="new task"
-                  placeholder="input new reading"
+                  placeholder="input new url"
                   aria-label="new task name"
                 />
                 
                 <button class="btn create" aria-label="create new task">+</button>
+               
               </form>
         </div>
 
@@ -143,6 +147,7 @@
         <input type="checkbox" />
         <label>
           <span class="custom-checkbox"></span>
+          <div class="inputlinks"></div>
         </label>
       </div>
     </template>
