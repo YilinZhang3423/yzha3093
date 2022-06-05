@@ -2,6 +2,7 @@
 const el = document.querySelector(".clock");
 const bell = document.querySelector("audio");
 
+
 const mindiv = document.querySelector(".mins");
 const secdiv = document.querySelector(".secs");
 
@@ -27,6 +28,7 @@ startBtn.addEventListener("click", () => {
 });
 
 function decremenT() {
+
   mindiv.textContent = Math.floor(seconds / 60);
   secdiv.textContent = seconds % 60 > 9 ? seconds % 60 : `0${seconds % 60}`;
   if (circle.classList.contains("danger")) {
@@ -45,15 +47,22 @@ function decremenT() {
     mins = 0;
     seconds = 0;
     bell.play();
+  
     let btn = localStorage.getItem("btn");
 
     if (btn === "focus") {
       startBtn.textContent = "start break";
+      
+      
+      
       startBtn.classList.add("break");
       localStorage.setItem("btn", "break");
     } else {
       startBtn.classList.remove("break");
       startBtn.textContent = "start focus";
+      
+      
+
       localStorage.setItem("btn", "focus");
     }
     startBtn.style.transform = "scale(1)";

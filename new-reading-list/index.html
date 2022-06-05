@@ -1,146 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Todo list</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/main.css" />
-    <link href="../css/style_index.css" rel="stylesheet" type="text/css" />
-    <script defer src="script.js"></script>
-  </head>
 
-  <body>
-    <!-- <h1 class="title">Reading lists</h1> -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Todo list</title>
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link href="../css/style_index.css" rel="stylesheet" type="text/css" />
+  <script defer src="script.js"></script>
+</head>
 
-    <div class="container">
-      <!--side menu-->
-      <div class="sidenav_container">
-        <div class="nav">
-          <!--user's personal information-->
-          <div class="user_info">
-            <div class="user_img"><img src="../image/Profile picture.png" alt="profile pic" /></div>
-            <div class="user_text">
-              <p>Good Day</p>
-              <h2>Vitaliy D.</h2>
-            </div>
+<body>
+  <!-- <h1 class="title">Reading lists</h1> -->
+
+  <div class="container">
+    <!--side menu-->
+    <div class="sidenav_container">
+      <div class="nav">
+        <!--user's personal information-->
+        <div class="user_info">
+          <div class="user_img"><img src="../image/Profile picture.png" alt="profile pic" /></div>
+          <div class="user_text">
+            <p>Good Day</p>
+            <h2>Vitaliy D.</h2>
           </div>
-          <div class="line"></div>
-          <!--Menu-dashboard_reading lists_clock-->
-          <div class="title">
-            <p>Menu</p>
-          </div>
-  
-  
-          <div class="menu">
-            <!--Menu-dashboard-->
-            <div class="sidenav-item">
-              <div class="light"></div>
-              <div class="licon">
-                <a class="menu_iconbutton" href="../index.html">
-                  <img class="iconimg" src="../icon/dashboardicon.png" alt="Dashboard icon">
-                </a>
-              </div>
-              <a class="menu_textbutton" href="../index.html">Dashboard</a>
-            </div>
-            <!--Menu-reading lists-->
-            <div class="sidenav-item">
-              <div class="light"></div>
-              <div class="licon">
-                <a class="menu_iconbutton" href="index.html">
-                  <img class="iconimg" id="navrlicon" src="../icon/readinglistsicon.png" alt="Reading Lists icon">
-                </a>
-              </div>
-              <a class="menu_textbutton" href="index.html">Reading Lists</a>
-            </div>
-            <!--Menu-clock-->
-            <div class="sidenav-item">
-              <div class="light"></div>
-              <div class="licon">
-                <a class="menu_iconbutton" href="../timer.html">
-                  <img class="iconimg" src="../icon/timericon.png" alt="Pomodoro Timer icon">
-                </a>
-              </div>
-              <a class="menu_textbutton" href="../timer.html">Pomodoro Timer</a>
-  
-            </div>
-          </div>
-  
-  
-  
         </div>
-      </div>
-      <!--side menu-->
-  
-      <!--up menu-->
-      <div class="upnav_container">
-        <!--Spotify music lists embeded-->
-        <div class="embedded_music_player">
-          <iframe title='embedded_music_player' id="upnavplaylist" style="border-radius:12px"
-            src="" width="100%"
-            height="80" frameBorder="0" allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        <div class="line"></div>
+        <!--Menu-dashboard_reading lists_clock-->
+        <div class="title">
+          <p>Menu</p>
         </div>
-  
-  
-      </div>
-      <!--up menu-->
-      <div class="main_container">
-    <div class="all-tasks">
-      <h2 class="task-list-title">My Reading lists</h2>
-      <ul class="task-list" data-lists></ul>
-      
 
-      <form action="" data-new-list-form>
-        <input 
-          type="text"
-          class="new list"
-          data-new-list-input
-          placeholder="new list name"
-          aria-label="new list name"
-        />
-        <button class="btn create" aria-label="create new list">+</button>
-      </form>
+
+        <div class="menu">
+          <!--Menu-dashboard-->
+          <div class="sidenav-item">
+            <div class="light"></div>
+            <div class="licon">
+              <a class="menu_iconbutton" href="../index.html">
+                <img class="iconimg" src="../icon/dashboardicon.png" alt="Dashboard icon">
+              </a>
+            </div>
+            <a class="menu_textbutton" href="../index.html">Dashboard</a>
+          </div>
+          <!--Menu-reading lists-->
+          <div class="sidenav-item">
+            <div class="light"></div>
+            <div class="licon">
+              <a class="menu_iconbutton" href="index.html">
+                <img class="iconimg" id="navrlicon" src="../icon/readinglistsicon.png" alt="Reading Lists icon">
+              </a>
+            </div>
+            <a class="menu_textbutton" href="index.html">Reading Lists</a>
+          </div>
+          <!--Menu-clock-->
+          <div class="sidenav-item">
+            <div class="light"></div>
+            <div class="licon">
+              <a class="menu_iconbutton" href="../timer.html">
+                <img class="iconimg" src="../icon/timericon.png" alt="Pomodoro Timer icon">
+              </a>
+            </div>
+            <a class="menu_textbutton" href="../timer.html">Pomodoro Timer</a>
+
+          </div>
+        </div>
+
+
+
+      </div>
     </div>
+    <!--side menu-->
 
-    <div class="todo-list" data-list-display-container>
-      <div class="todo-header">
-        <h2 class="list-title" data-list-title> <button class="btn open" aria-label="open links" onclick="openwindow()">++</button></h2>
-        <p class="task-count" data-list-count>3 tasks remaining</p>
-        <button class="btn open" aria-label="open links" onclick="openwindow()">Open All</button>
+    <!--up menu-->
+    <div class="upnav_container">
+      <!--Spotify music lists embeded-->
+      <div class="embedded_music_player">
+        <iframe title='embedded_music_player' id="upnavplaylist" style="border-radius:12px" src="" width="100%"
+          height="80" frameBorder="0" allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
       </div>
-      <!--  -->
 
-      <div class="todo-body">
-        <div class="tasks" data-tasks></div>
 
-        <div class="new-task-creator">
+    </div>
+    <!--up menu-->
+
+    <!--main content-->
+    <div class="main_container">
+      <div class="all-tasks">
+        <h2 class="task-list-title">My Reading lists</h2>
+        <ul class="task-list" data-lists></ul>
+
+
+        <form action="" data-new-list-form>
+          <input type="text" class="new list" data-new-list-input placeholder="new list name"
+            aria-label="new list name" />
+          <button class="btn create" aria-label="create new list">+</button>
+        </form>
+      </div>
+
+      <div class="todo-list" data-list-display-container>
+        <div class="todo-header">
+          <h2 class="list-title" data-list-title> <button class="btn open" aria-label="open links"
+              onclick="openwindow()">++</button></h2>
+          <p class="task-count" data-list-count>3 tasks remaining</p>
+          <button class="btn open" aria-label="open links" onclick="openwindow()">Open All</button>
+        </div>
+        <!--  -->
+
+        <div class="todo-body">
+          <div class="tasks" data-tasks></div>
+
+          <div class="new-task-creator">
             <form action="" data-new-task-form>
-                <input 
-                  type="text"
-                  data-new-task-input
-                  class="new task"
-                  placeholder="input new url"
-                  aria-label="new task name"
-                />
-                
-                <button class="btn create" aria-label="create new task">+</button>
-               
-              </form>
-        </div>
+              <input type="text" data-new-task-input class="new task" placeholder="input new url"
+                aria-label="new task name" />
 
-        <div class="delete-stuff">
-          <button class="btn delete" data-clear-complete-tasks-button>Clear completed tasks</button>
-          <button class="btn delete" data-delete-list-button>Delete list</button>
+              <button class="btn create" aria-label="create new task">+</button>
+
+            </form>
+          </div>
+
+          <div class="delete-stuff">
+            <button class="btn delete" data-clear-complete-tasks-button>Clear completed tasks</button>
+            <button class="btn delete" data-delete-list-button>Delete list</button>
+          </div>
         </div>
       </div>
-    </div>
 
-   
+
     </div>
     <template id="task-template">
       <div class="task">
@@ -152,5 +142,6 @@
       </div>
     </template>
   </div>
-  </body>
+</body>
+
 </html>

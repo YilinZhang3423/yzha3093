@@ -330,10 +330,25 @@ background: linear-gradient(120deg, rgb(242, 192, 255) 30%, rgb(151, 140, 250) 7
  allowfullscreen:"";
  
 }
+.main_container{
+  margin:30px 15px;
+  border-radius: 2px;
+  padding: 5px;
+  width: 90vw;
+  height: 305px;
+  
+
+}
+.playlist-choice p{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  margin-bottom: 10px;
+
+}
 
 .playlist-box{
   box-shadow: 2px 2px  #f44336 inset;
-  margin:30px 10px;
+  
   background: rgb(90,70,70);
 background: linear-gradient(120deg, rgb(235, 185, 185) 0%, rgb(232, 165, 77) 30%, rgb(44, 190, 149) 50%, rgb(44, 158, 220) 71%, rgb(227, 29, 52) 100%);
   border-radius: 12px;
@@ -394,5 +409,86 @@ background: linear-gradient(120deg, rgb(235, 185, 185) 0%, rgb(232, 165, 77) 30%
   }
 }
 
+/* Create kanban boards section */
 
+/* Set proper size for the buuton */
+.kanbanboardsCreator button img{
+  width:30px
+}
+.kanbanboardsCreator{
+  font-family: 'Raleway', sans-serif;
+  margin-top: 30px;
+  
+}
+
+.localStoredKanban{
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  gap: 20px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "kanbantext kanbanimg"
+    "button kanbanimg";
+}
+
+.kanbanDescriptionImg{
+  grid-area:kanbanimg;
+}
+.kanbanDescriptionText{
+  grid-area:kanbantext;
+}
+
+.temporaryKanban button{
+  grid-area:button;
+}
+
+.temporaryKanban{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  gap: 20px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "kanbanimg kanbantext"
+    "kanbanimg button";
+}
+
+.kanbanDescriptionImg{
+  grid-area:kanbanimg;
+}
+.kanbanDescriptionText{
+  grid-area:kanbantext;
+}
+
+.temporaryKanban button{
+  grid-area:button;
+}
+
+@media screen and (max-width: 600px) {
+  .localStoredKanban,
+  .temporaryKanban{
+    margin-top: 30px;
+    display: grid;
+    grid-template-rows: 1fr auto 30px;
+    gap: 20px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "kanbanimg"
+      "kanbantext"
+      "button ";
+  }
+  .kanbanDescriptionImg{
+    grid-area:kanbanimg;
+  }
+  .kanbanDescriptionText{
+    grid-area:kanbantext;
+  }
+  
+  .temporaryKanban button,.localStoredKanban button{
+    grid-area:button;
+  }
+
+}
 

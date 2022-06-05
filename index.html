@@ -80,8 +80,7 @@
     <div class="upnav_container">
       <!--Spotify music lists embeded-->
       <div class="embedded_music_player">
-        <iframe title='embedded_music_player' id="upnavplaylist" style="border-radius:12px"
-          src="" width="100%"
+        <iframe title='embedded_music_player' id="upnavplaylist" style="border-radius:12px" src="" width="100%"
           height="80" frameBorder="0" allowfullscreen=""
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
       </div>
@@ -98,9 +97,8 @@
         <div class="playlist-box">
           <ul class="playlist">
             <li>
-              <iframe 
-                src="https://open.spotify.com/embed/playlist/6mRYwA32FHVrHHy6lW1bAu?utm_source=generator" height="180"
-                frameBorder="0" allowfullscreen=""
+              <iframe src="https://open.spotify.com/embed/playlist/6mRYwA32FHVrHHy6lW1bAu?utm_source=generator"
+                height="180" frameBorder="0" allowfullscreen=""
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
               <button class="playlist-choose-but" id="butt1" onclick="changeplaylist1()">Choose This</button>
 
@@ -117,27 +115,24 @@
             </li>
             <li>
 
-              <iframe 
-                src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4PP3DA4J0N8?utm_source=generator" height="180"
-                frameBorder="0" allowfullscreen=""
+              <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4PP3DA4J0N8?utm_source=generator"
+                height="180" frameBorder="0" allowfullscreen=""
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
               <button class="playlist-choose-but" id="butt3" onclick="changeplaylist3()">Choose This</button>
 
             </li>
             <li>
 
-              <iframe 
-                src="https://open.spotify.com/embed/playlist/37i9dQZF1DX7KNKjOK0o75?utm_source=generator" height="180"
-                frameBorder="0" allowfullscreen=""
+              <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX7KNKjOK0o75?utm_source=generator"
+                height="180" frameBorder="0" allowfullscreen=""
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
               <button class="playlist-choose-but" id="butt4" onclick="changeplaylist4()">Choose This</button>
 
             </li>
             <li>
 
-              <iframe 
-                src="https://open.spotify.com/embed/playlist/37i9dQZF1DWZVAVMhIe3pV?utm_source=generator" height="180"
-                frameBorder="0" allowfullscreen=""
+              <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWZVAVMhIe3pV?utm_source=generator"
+                height="180" frameBorder="0" allowfullscreen=""
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
               <button class="playlist-choose-but" id="butt5" onclick="changeplaylist5()">Choose This</button>
 
@@ -145,20 +140,48 @@
         </div>
 
       </div>
+      <div class="kanbanboardsCreator">
+        <div class="temporaryKanban">
+          <div class="kanbanDescriptionImg">
+            <img src="icon/kanban1.png" alt="plan your day">
+          </div>
+          <div class="kanbanDescriptionText">
+            <h2>Start your plan for your course! </h2>
+            <p>Here's the handy Kanban board for you to start the journey of  planning for your future study.
+              After planning actively, you would have the overall picture of your study map in your mind. It's the first step to time management!</p>
+            <p> #This Kanban board could be easily back to default settings by refresh the page </p>
+          </div>
+          <button>
+            <a class="menu_iconbutton" href="kanban.html">
+              <img src="icon/goicon.png" alt="create a board">
+            </a>
+          </button>
+        </div>
 
-      <button>
-        <a class="menu_iconbutton" href="kanban.html">
-          create a new temporary kanban board for planning
-        </a>
-      </button>
+        <div class="localStoredKanban">
+          <div class="kanbanDescriptionImg">
+            <img src="icon/kanban2.png" alt="manage your time">
+          </div>
+          <div class="kanbanDescriptionText">
+            <h2>Managing your task for school here!  </h2>
+            <p>Here's the Kanban board that records your input! 
+              You could add multiply kanban boards for each of your unit of study.
+              You could records every single task you've done or plan to do here.
+              </p>
+            <p> #All of inputs are going to be saved even if you leave the page
+            </p>
+          </div>
+          <button>
+            <a class="menu_iconbutton" href="nullboard/nullboard.html">
+              <img src="icon/goicon.png" alt="create a board">
+            </a>
+          </button>
+        </div>
 
-      <button>
-        <a class="menu_iconbutton" href="nullboard/nullboard.html">
-          create a new project managemnet kanban board
-        </a>
-      </button>
+      </div>
+
     </div>
-    
+
   </div>
   </div>
   <script src="javascript/index.js"></script>

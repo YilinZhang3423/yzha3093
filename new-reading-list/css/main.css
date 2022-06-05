@@ -1,6 +1,6 @@
 :root {
-  --clr-primary: rgb(54, 112, 199);
-  --clr-light: #f4f4f4;
+  --clr-primary: rgb(255, 255, 255);
+  --clr-light: rgba(252, 170, 170, 0.745);
   --clr-dark: #333;
   --clr-warning: rgb(99, 36, 36);
 }
@@ -32,7 +32,25 @@ body {
   letter-spacing: 2px;
   margin: -0.3em 0 0.5em;
 } */
+.sidenav_container {
+  font-family: 'Montserrat', sans-serif;
+  font-size: medium;
+}
+@media screen and (min-width: 600px){
+.main_container{
+  display: grid;
+  grid: "header header header header" auto "...... lists  active ......" auto/1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
+  
+  gap:15px 0px;
+  margin:15px;
+}
+}
 
+  .title p {
+    font-size: 14px;
+    font-weight: bold;
+    color: #eb5a56;
+  }
 .all-tasks {
   grid-area: lists;
 }

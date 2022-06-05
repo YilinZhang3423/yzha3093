@@ -52,28 +52,34 @@
       margin: 5px auto;
     }
     form button {
-      background: rgb(25, 67, 255);
+      border-radius: 25px;
+      background:#eb5a56 ;
       width: 100%;
       margin: 5px 0;
       color: white;
     }
     .start {
-      background: rgb(48, 33, 253);
+      border-radius: 25px;
+      background: #eb5a56;
       color: white;
     }
     .break {
-      background: rgb(0, 199, 116);
-      color: #000000;
+      border-radius: 25px;
+      background: #92eb56;
+      color: #ffffff;
     }
     .reset {
-      background: rgb(250, 69, 109);
-      color: #000000;
+      border-radius: 25px;
+      background: #56ebd5;
+      color: #ffffff;
     }
     .pause {
-      background: rgb(253, 143, 17);
+      border-radius: 25px;
+      background: #ebbe56;
     }
     .resume {
-      background: rgb(131, 10, 252);
+      border-radius: 25px;
+      background: #5659eb;
       color: white;
     }
     .clock {
@@ -97,7 +103,7 @@
       transition: 0.5s;
       transform: rotate(-90deg);
       transform-origin: 50% 50%;
-      stroke: rgb(255, 96, 125);
+      stroke: #eb5a56;
     }
     
     
@@ -120,41 +126,42 @@
       }
     }
     
+    
     @media screen and (min-width: 768px) {
-      .container{
+      .main-container{
         display: grid;
-        grid-template-columns: auto 1fr 2fr ;
-        grid-template-rows: 50px 80px 2fr 1.5fr;
-        grid-template-areas:
-          "sidnav_container  upnav_container upnav_container "
-          "sidnav_container head head "
-          "sidnav_container clock form "
-          "sidnav_container  btns  form";
+        grid-template-columns:1fr 1fr ;
+        grid-template-rows: 80px 2fr 1.5fr;
+        grid-template-areas:   
+          " head head "
+          " form clock  "
+          "form  btns";
       }
 
-      .upnav_container {
-        grid-area: upnav_container;
-        display: flex;
-        background-color: #4f0a52;
-        justify-content: right;
-      }
-      
-      .sidenav_container {
-        grid-area: sidnav_container;
-      }
+
       
       .btn-group {
         grid-area: btns;
         justify-content: center;
       }
-      .clock {
+      .clock{
         grid-area: clock;
         height: 100%;
+      
       }
-      h1 {
+     
+      .clocktext {
         grid-area: head;
-    
-        align-self: center;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        
+      }
+
+      .clocktext h3{
+        margin-left: 20%;
+        justify-content: center;
+        font-weight: 400;
       }
       form {
         align-self: center;
@@ -164,12 +171,66 @@
       }
      
     }
+
+    @media screen and (max-width: 768px) {
+      .main-container{
+        display: grid;
+        grid-template-columns: 1fr ;
+        grid-template-rows: 80px 1fr 0.1fr 0.6fr;
+        grid-template-areas:   
+          " head "
+          " clock  "
+          " btns"
+          " form";
+      }
+
+
+      
+      .btn-group {
+        grid-area: btns;
+        justify-content: center;
+      }
+      .clock{
+        grid-area: clock;
+        height: 100%;
+      
+      }
+     
+      .clocktext {
+        font-size: 20px;
+        grid-area: head;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        
+      }
+
+      .clocktext h3{
+        font-size: 15px;
+        margin-left: 13%;
+        justify-content: center;
+        font-weight: 400;
+      }
+      form {
+        grid-area: form;
+        align-self: center;
+        justify-self: center;
+        width: 50%;
+        justify-content: space-around;
+      }
+     
+    }
     
     @media screen and (max-width: 375px) {
+      
       form {
         height: 40%;
       }
-      footer {
-        position: static;
+      .clocktext h3{
+        font-size: 12px;
+        
+        justify-content: center;
+        font-weight: 400;
       }
+     
     }
