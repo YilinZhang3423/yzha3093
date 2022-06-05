@@ -1,3 +1,10 @@
+// When the window loads, showing the certain playlist chosen from last time
+window.addEventListener('load', (event) => {
+  const navsrc = localStorage.getItem('thesrc');
+  var theplaylist = document.getElementById("upnavplaylist");
+  theplaylist.src = navsrc;
+});
+
 const listsContainer = document.querySelector('[data-lists]')
 const newListForm = document.querySelector('[data-new-list-form]')
 const newListInput = document.querySelector('[data-new-list-input]')

@@ -7,6 +7,11 @@ window.addEventListener('load', (event) => {
 });
 
 
+function myConfirmation() {
+    return 'Are you sure you want to quit?';
+}
+
+window.onbeforeunload = myConfirmation;
 
 
 function drag(ev) {
@@ -64,7 +69,6 @@ function saveTask(){
         editButton.style.display = "block";
     }
 
-    var todo = document.getElementById("todo");
     var taskName = document.getElementById("task-name").value;
     var completetime =  document.getElementById("estimatedTimeInput").value;
     var duedate =  document.getElementById("dueDateInput").value;

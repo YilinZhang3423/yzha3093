@@ -18,20 +18,21 @@
 <body>
   <!-- Reference: Retrieved from: https://codepen.io/karthikdevarticles/pen/PopxPwO  -->
   <div class="container">
+    <!--        Up nav for playlist section   -->
     <div class="upnav">
-       <a class="menu_iconbutton" href="index.html">
-        <img class="iconimg" src="icon/dashboardicon.png" alt="Dashboard icon">
+      <!--       return to dashboard    -->
+      <a class="menu_iconbutton" href="index.html">
+        <img class="iconimg" src="icon/backicon.png" width='50px' height='50px' alt="Dashboard icon" onclick="alertforexit()">
       </a>
-
+      <!--       music playlist    -->
       <div class="embedded_music_player">
-        <iframe title='Chill study music playlist' id="upnavplaylist" style="border-radius:12px"
-          src="" width="100%"
+        <iframe title='Chill study music playlist' id="upnavplaylist" style="border-radius:12px" src="" width="100%"
           height="80" frameBorder="0" allowfullscreen=""
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
       </div>
-
-
+      
     </div>
+    <!--       Main content for kanbans section   -->
     <div class="kanban-board">
 
       <!--        Defult to-do block   -->
@@ -77,7 +78,7 @@
       </div>
 
 
-     
+
 
 
       <!--      Defult in-progress block   -->
@@ -89,7 +90,7 @@
               alt='delete-icon' width="13px" height="13px"></button>
         </div>
       </div>
-      
+
 
       <!--      Defult done block   -->
       <div class="kanban-block" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
@@ -119,7 +120,7 @@
               alt='delete-icon' width="13px" height="13px"></button>
         </div> -->
     </span>
-  
+
 
 
     <!-- Task list templete -->

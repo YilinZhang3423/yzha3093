@@ -10,12 +10,86 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/main.css" />
+    <link href="../css/style_index.css" rel="stylesheet" type="text/css" />
     <script defer src="script.js"></script>
   </head>
 
   <body>
-    <h1 class="title">Stuff I need to do</h1>
+    <!-- <h1 class="title">Reading lists</h1> -->
 
+    <div class="container">
+      <!--side menu-->
+      <div class="sidenav_container">
+        <div class="nav">
+          <!--user's personal information-->
+          <div class="user_info">
+            <div class="user_img"><img src="../image/Profile picture.png" alt="profile pic" /></div>
+            <div class="user_text">
+              <p>Good Day</p>
+              <h2>Vitaliy D.</h2>
+            </div>
+          </div>
+          <div class="line"></div>
+          <!--Menu-dashboard_reading lists_clock-->
+          <div class="title">
+            <p>Menu</p>
+          </div>
+  
+  
+          <div class="menu">
+            <!--Menu-dashboard-->
+            <div class="sidenav-item">
+              <div class="light"></div>
+              <div class="licon">
+                <a class="menu_iconbutton" href="../index.html">
+                  <img class="iconimg" src="../icon/dashboardicon.png" alt="Dashboard icon">
+                </a>
+              </div>
+              <a class="menu_textbutton" href="../index.html">Dashboard</a>
+            </div>
+            <!--Menu-reading lists-->
+            <div class="sidenav-item">
+              <div class="light"></div>
+              <div class="licon">
+                <a class="menu_iconbutton" href="index.html">
+                  <img class="iconimg" id="navrlicon" src="../icon/readinglistsicon.png" alt="Reading Lists icon">
+                </a>
+              </div>
+              <a class="menu_textbutton" href="index.html">Reading Lists</a>
+            </div>
+            <!--Menu-clock-->
+            <div class="sidenav-item">
+              <div class="light"></div>
+              <div class="licon">
+                <a class="menu_iconbutton" href="../timer.html">
+                  <img class="iconimg" src="../icon/timericon.png" alt="Pomodoro Timer icon">
+                </a>
+              </div>
+              <a class="menu_textbutton" href="../timer.html">Pomodoro Timer</a>
+  
+            </div>
+          </div>
+  
+  
+  
+        </div>
+      </div>
+      <!--side menu-->
+  
+      <!--up menu-->
+      <div class="upnav_container">
+        <!--Spotify music lists embeded-->
+        <div class="embedded_music_player">
+          <iframe title='embedded_music_player' id="upnavplaylist" style="border-radius:12px"
+            src="" width="100%"
+            height="80" frameBorder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+  
+  
+      </div>
+      <!--up menu-->
+      <div class="main_container">
     <div class="all-tasks">
       <h2 class="task-list-title">My lists</h2>
       <ul class="task-list" data-lists></ul>
@@ -47,9 +121,10 @@
                   type="text"
                   data-new-task-input
                   class="new task"
-                  placeholder="new task name"
+                  placeholder="input new reading"
                   aria-label="new task name"
                 />
+                
                 <button class="btn create" aria-label="create new task">+</button>
               </form>
         </div>
@@ -71,5 +146,6 @@
         </label>
       </div>
     </template>
+  </div>
   </body>
 </html>

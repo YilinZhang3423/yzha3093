@@ -19,11 +19,11 @@ body {
   font-size: 1.5rem;
   background-color: var(--clr-primary);
   color: var(--clr-light);
-  display: grid;
-  grid: "header header header header" auto "...... lists  active ......" auto/1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
+  /* display: grid;
+  grid: "header header header header" auto "...... lists  active ......" auto/1fr minmax(100px, 300px) minmax(250px, 500px) 1fr; */
 }
 
-.title {
+/* .title {
   grid-area: header;
   text-align: center;
   font-size: calc(7vw + 2rem);
@@ -31,7 +31,7 @@ body {
   color: rgba(0, 0, 0, 0.1);
   letter-spacing: 2px;
   margin: -0.3em 0 0.5em;
-}
+} */
 
 .all-tasks {
   grid-area: lists;

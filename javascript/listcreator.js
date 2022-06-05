@@ -1,8 +1,8 @@
 // Book Class: Represents a Book
 class Book {
-    constructor(title, author, isbn) {
+    constructor(title,isbn) {
       this.title = title;
-      this.author = author;
+      
       this.isbn = isbn;
     }
   }
@@ -22,7 +22,7 @@ class Book {
   
       row.innerHTML = `
         <td>${book.title}</td>
-        <td>${book.author}</td>
+
         <td>${book.isbn}</td>
         <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
       `;
@@ -50,7 +50,7 @@ class Book {
   
     static clearFields() {
       document.querySelector('#title').value = '';
-      document.querySelector('#author').value = '';
+      // document.querySelector('#author').value = '';
       document.querySelector('#isbn').value = '';
     }
   }
@@ -97,7 +97,7 @@ class Book {
   
     // Get form values
     const title = document.querySelector('#title').value;
-    const author = document.querySelector('#author').value;
+    // const author = document.querySelector('#author').value;
     const isbn = document.querySelector('#isbn').value;
   
     // Validate
@@ -105,7 +105,7 @@ class Book {
       UI.showAlert('Please fill in all fields', 'danger');
     } else {
       // Instatiate book
-      const book = new Book(title, author, isbn);
+      const book = new Book(title, isbn);
   
       // Add Book to UI
       UI.addBookToList(book);
@@ -117,7 +117,7 @@ class Book {
       UI.showAlert('Book Added', 'success');
   
       // Clear fields
-      UI.clearFields();
+      UI.clearFields();  
     }
   });
   
