@@ -9,7 +9,7 @@
 @media screen and (min-width: 600px){
 .container {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto 1fr;
   grid-template-rows: 50px 1fr;
   gap: 50px 0px;
   grid-auto-flow: row;
@@ -241,7 +241,7 @@ background: linear-gradient(120deg, rgb(242, 192, 255) 30%, rgb(151, 140, 250) 7
   .container {
     display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 80px 1fr 100px;
+  grid-template-rows: 80px 1fr 120px;
   gap: 30px 0px;
   grid-auto-flow: row;
   grid-template-areas:
@@ -252,6 +252,7 @@ background: linear-gradient(120deg, rgb(242, 192, 255) 30%, rgb(151, 140, 250) 7
 .upnav_container{
   grid-area: upnav;
   display: flex;
+  
   
   margin:0px 0px;
   background: rgb(235,90,86);
@@ -264,11 +265,13 @@ background: linear-gradient(120deg, rgb(242, 192, 255) 30%, rgb(151, 140, 250) 7
   height:100px;
   grid-area: sidnav; 
   
+  
+  
 }
 
 .nav{
   height:100px;
-  margin:25px 25px;
+  margin:50px 25px;
   border-radius: 25px;
   background-color:rgba(255, 241, 241, 0.745);
   box-shadow: 2px 2px #eb5a56;
@@ -316,6 +319,13 @@ background: linear-gradient(120deg, rgb(242, 192, 255) 30%, rgb(151, 140, 250) 7
   height:48px;
   
 }
+.main_container{
+
+  grid-area:main_container;
+ display: flex;
+ flex-direction: column;
+ justify-items: center;
+}
 
   }
 
@@ -332,14 +342,13 @@ background: linear-gradient(120deg, rgb(242, 192, 255) 30%, rgb(151, 140, 250) 7
  
 }
 .main_container{
-  margin:30px 15px;
-  border-radius: 2px;
-  padding: 5px;
-  width: 90vw;
+  margin:30px 30px;
+  border-radius: 18px;
+  padding: 15px;
   
-  
-
 }
+
+
 .playlist-choice p{
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
@@ -403,10 +412,20 @@ background: linear-gradient(120deg, rgb(235, 185, 185) 0%, rgb(232, 165, 77) 30%
 
 }
 @media screen and (max-width: 600px) {
+  .playlist-choice{
+ margin:30px;
+  }
+  .playlist-box{
+    width:400px;
+  }
   .playlist iframe{
     height:240px;
     margin-bottom: 5px;
   
+  }
+
+  .kanbanboardsCreator{
+    margin:30px;
   }
 }
 
@@ -414,7 +433,7 @@ background: linear-gradient(120deg, rgb(235, 185, 185) 0%, rgb(232, 165, 77) 30%
 
 /* Set proper size for the buuton */
 .kanbanboardsCreator button img{
-  width:30px
+  width:30px;
 }
 .kanbanboardsCreator{
   font-family: 'Raleway', sans-serif;
@@ -516,7 +535,8 @@ background: linear-gradient(120deg, rgb(235, 185, 185) 0%, rgb(232, 165, 77) 30%
     width:80vw;
   }
   
-  .localStoredKanban button, .temporaryKanban button{
+  .localStoredKanban button
+  {
     grid-area:button;
     height:40px;
     
@@ -540,6 +560,11 @@ background: linear-gradient(120deg, rgb(235, 185, 185) 0%, rgb(232, 165, 77) 30%
   .kanbanDescriptionText{
     grid-area:kanbantext;
     width:80vw;
+  }
+  .temporaryKanban button{
+    grid-area:button;
+    height:40px;
+    
   }
 
 }

@@ -23,10 +23,10 @@ In the default state, the up nav would shows a music icon on the right-top nav. 
 
 👁️‍🗨️Feedback from user:
 
-1.Playlists choice:
+1. Playlists choice:
 Although most of the user usually plays their liked playlist, many of them do try some trending or recommend playlist from time to time. So I choose five trending playlist that suits for motivating students from spotify.
 
-2.Embed music player on the page:
+2. Embed music player on the page:
 Users find that it’s troublesome to have the next several songs to play below the music player on the right top corner. So I decide to only keep the play music section on the right-top corner of each page.
 
 ✨A3:
@@ -43,9 +43,9 @@ and 📱mobile version.
 	
 ### 🧭Dashboard🗺️
 
-- `User needs :`
+- `User needs:`Dashboards is where to leave the first impression, user should be quickly find out what this web app able to do. The information of the dashboard should be straight-forward enough to tell the user what this app able to do.
 
-- `User research Insights:` 
+- `User research Insights:` According to user usability testing, the dashboard from A2 may include too much to blur the subject. The students do conducting time management themselves already have their commonly-used calendar as task list reminder.
 
 - `Iteration:`
 
@@ -55,63 +55,129 @@ and 📱mobile version.
 
 The original music player was embedded in the right-top corner of every page. It would always show the playlist (next song to play) below the play music section.
 
-![music section design for A2-desktop version](/image/A2-music-d.png) 
-
-📱Mobile:
-In the default state, the up nav would shows a music icon on the right-top nav. When user press the icon, it would show the music player below the up nav.
-
-![music section design for A2-mobile version](/image/A2-music-m.png) 
+![dashboard section design for A2-desktop version](/image/A2-dashboard.png) 
+ 
 
 👁️‍🗨️Feedback from user:
+1. Users already having calendar function on their app to reminder. They would prefer to have a more specialized web app that works as a supplement for helping plan the task session and have an overall picture of the task for the whole semester.
+2. User would like some descriptive text on the page to help them understand what the function (kanban boards) can achieve.
 
-1.Playlists choice:
-Although most of the user usually plays their liked playlist, many of them do try some trending or recommend playlist from time to time. So I choose five trending playlist that suits for motivating students from spotify.
 
-2.Embed music player on the page:
-Users find that it’s troublesome to have the next several songs to play below the music player on the right top corner. So I decide to only keep the play music section on the right-top corner of each page.
+✨A3:
+So, I delete the calendar function and decide to make two kanban boards that would satisfy two different task management needs.
+
+![dashboard section design for A3-desktop version](/image/A3-dashboard.png) 
+
+
+### 🌈Kanban Boards🗂️
+- `User needs:`Dashboards is where to leave the first impression, user should be quickly find out what this web app able to do. The information of the dashboard should be straight-forward enough to tell the user what this app able to do.
+
+- `User research Insights:` According to user usability testing, their needs for kanban boards could be sperated as these two.
+Firstly, they want to plan for something.(Get the whole picture of achieving something)
+Secondly, they want to keep track of the tasks in a project(assessment/course).
+- `Iteration:`
+
+ A2: 
+
+To get into this kanban boards, user must define the unit of study first 
+![kanban boards design for A2-desktop version](/image/A2-kanbanboard1.png) 
+, and then go to the kanban section
+![kanban boards design for A2-desktop version](/image/A2-kanbanboard2.png) 
+
+ 
+
+👁️‍🗨️Feedback from user:
+1. User need to a more handy tool to plan
+2. User would like a more colorful kanban boards
+3. User would like a more strutured kanban boards
 
 ✨A3:
 
-I added a music seletct parts in the dashboard.
-![music section design for A3-desktop version-gif](/image/A3-dashboad-d.gif) 
+I decide to do two kanban boards that could fulfill the user needs. And I decide to cut the enter unit of study page, and merge this project managemnet function into one of the kanban boards section.
 
-For the right-top corner music player, I cancel the showing of next song below playbox for both 🖥️desktop 
+The Kanban Board- no local storage
 
-![music section design for A3-desktop version](/image/A3-music-d.png) 
-and 📱mobile version.
-![music section design for A3-mobile version](/image/A3-music-m.png) 
+Here's the handy Kanban board  to start the journey of  planning for future study.After planning actively, user would have the overall picture of your study map in the mind.
+(This Kanban board could be easily back to default settings by refresh the page- so it could be easily rest for planning(brainstorm))
+![kanban1 section design for A3-desktop version](/image/A3-kanban1-d.gif) 
 
-### 🌈Kanban Boards🗂️
+Kanban Board- have local storage
+
+The More structured one with project managemnet system(on the top-right hidden menu)
+
+![kanabn2 section design for A3-desktop version](/image/A3-kanban2.gif) 
+
 ### 📖Reading List Creator👓
+- `User needs:`For university students, many assignment would need to handle the reference material.
+
+- `User research Insights:` User would perfer a simple reading list creator that helps them handling initial reference lists record or  for record the reading materials and open them together.
+
+- `Iteration:`
+
+ A2: 
+![Reading lists design for A2-desktop version](/image/A2-readinglist.png) 
+
+
+👁️‍🗨️Feedback from user:
+1. The unit of study section is not clear
+2. The UI for input new readings is not clear
+
+
+✨A3:
+- open mutiply pages function maybe blocked by  Web Browser, Following this (https://www.k-state.edu/ksis/help/gettingstarted/Disabling-Popup-Blockers.html) to disable Web Browser Pop-up Blockers
+
+This reading lists is designed for user easily input the urls for the reading material and open them together.
+![Reading lists design for A3-desktop version](/image/A3-rl.png) 
+
+
+
+
 ### ⏳Pomodoro Timer⏱️
+- `User needs:`User need a timer that set their study session for them so that they could easily start doing their study.
+
+- `User research Insights:` They want this timer be a clear but flexible work-rest reminder.
+
+- `Iteration:`
+
+ A2: 
+![Pomodoro Timer design for A2-desktop version](/image/A2-timer.png) 
+
+
+👁️‍🗨️Feedback from user:
+1. The reminder of the finish of one session is not clear
+2. Sometimes they may start the break time later, they want to control the start of their break time
+3. The button UI is bad
+
+
+✨A3:
+- open mutiply pages function maybe blocked by  Web Browser, Following this (https://www.k-state.edu/ksis/help/gettingstarted/Disabling-Popup-Blockers.html) to disable Web Browser Pop-up Blockers
+
+This Pomodoro Timer enables flexible session change and enable user to start break when they want to.
+
+Also, this timer encorage user to record their session and find the proper personal work flow for themselves.
+
+The session records requires users' input, giving them sense of achievement when finished the work session.
+![Pomodoro Timer design for A3-desktop version](/image/A3-pt.png) 
+
 
 ## User Interface
 ### Icons used
+![icon style change](/image/icon-change.png)
 
-Iteration:
+### Responsive design
+for mobile version
 
-A2:
+![icon style change](/image/A3-mobile%20version.gif)
 
-Feedback from user:
 
-A3:
+### Hover Animation
+1. Side nav
 
-Theme color
-Iteration:
-A2: In the A2-Web App Pitch, I choose the
-Self-reflection:
-A3:
-Responsive design
-Iteration:
-A2: 
-Self-reflection:
-A3:
+![Side nav hover animation](/image/A3-sidenavhover.gif) 
 
-Hover Animation
-Iteration:
-A2: 
-Self-reflection & Feedback from user:
-A3:
+2. button sample
+
+![Side nav hover animation](/image/A3-button1.gif) 
 
 
 

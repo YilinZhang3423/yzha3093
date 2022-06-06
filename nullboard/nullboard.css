@@ -215,7 +215,8 @@ body.dragging {
 /***/
 .board {
     
-    min-width: calc( var(--lw) * 1.5px );
+    min-width: calc( var(--1w) * 1.5px );
+    
 
     width: -moz-max-content;    /* firefox */
     width: -webkit-max-content; /* chrome  */
@@ -231,6 +232,8 @@ body.dragging {
     -ms-user-select: none;
     user-select: none;
 }
+
+
 
 
 body.crowded .board {
