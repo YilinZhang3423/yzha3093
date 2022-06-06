@@ -3,7 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Web app</title>
+  <!--title-->
+  <title>Pomodoro Timer</title>
+  <!--favicon-->
+  <link rel="icon" type="image/x-icon" href="/icon/timericon.png">
   <!--Google fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +23,7 @@
 <body>
   <div class="container">
     <!--side menu-->
-    <div class="sidenav_container">
+    <nav class="sidenav_container">
       <div class="nav">
         <!--user's personal information-->
         <div class="user_info">
@@ -74,7 +77,7 @@
 
 
       </div>
-    </div>
+    </nav>
     <!--side menu-->
 
     <!--up menu-->
@@ -93,20 +96,19 @@
 
 
     <!--main content timer-->
-
-
     <!-- Reference-Inspired by:
           1. Mini Javascript Project - Pomodoro Timer with Circular Progress Indicator (Vanilla JS , HTML ,CSS)
           Retrieved from:https://www.youtube.com/watch?v=MtYR2vCs2R0(https://github.com/abhik-b/pomodro-timer)
           2.Pomodoro Timer | Javascript Beginner Project Tutorial
           Retrieved from:https://www.youtube.com/watch?v=vAEG6OVCass -->
 
-    <div class="main_container">
+    <main class="main_container">
       <div class="clocktext">
-        <h1>Pomodro ⏲ with 🛎</h1>
+        <!--text introducing how Pomodoro Timer works-->
+        <h1>Pomodoro ⏲ with 🛎</h1>
         <h3>Default times = 25 mins on, 5 mins off (x4) then 30 mins break</h3>
       </div>
-
+      <!--section that display the clock-->
       <figure class="clock">
         <div class="mins">0</div>
         <div>:</div>
@@ -116,13 +118,13 @@
           <circle class="progress-ring__circle" stroke-width="8" fill="transparent" r="50" cx="60" cy="60" />
         </svg>
       </figure>
-
+      <!--section that display the buttons to control the timer-->
       <div class="btn-group">
         <button class="start">Start focus</button>
         <button class="reset">Reset</button>
         <button class="pause">Pause</button>
       </div>
-
+      <!--section that display the buttons to control the timer-->
       <form action=".">
         <label for="focusTime">Focus Time</label>
         <input type="number" value="25" id="focusTime" />
@@ -137,7 +139,7 @@
 
       </form>
 
-    </div>
+    </main>
   </div>
   <script src="javascript/index.js"></script>
   <script src="javascript/timer.js"></script>

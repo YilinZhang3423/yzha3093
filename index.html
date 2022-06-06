@@ -3,7 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Web app</title>
+  <!--title-->
+  <title>Dashboard</title>
+  <!--favicon-->
+  <link rel="icon" type="image/x-icon" href="/icon/dashboardicon.png">
   <!--Google fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +22,7 @@
 <body>
   <div class="container">
     <!--side menu-->
-    <div class="sidenav_container">
+    <nav class="sidenav_container">
       <div class="nav">
         <!--user's personal information-->
         <div class="user_info">
@@ -30,14 +33,14 @@
           </div>
         </div>
         <div class="line"></div>
-        <!--Menu-dashboard_reading lists_clock-->
+        <!--Menu for showing icons and text to click that leads to dashboard/reading lists/timer-->
         <div class="title">
           <p>Menu</p>
         </div>
 
 
         <div class="menu">
-          <!--Menu-dashboard-->
+          <!--Menu-links to dashboard-->
           <div class="sidenav-item">
             <div class="light"></div>
             <div class="licon">
@@ -47,7 +50,7 @@
             </div>
             <a class="menu_textbutton" href="index.html">Dashboard</a>
           </div>
-          <!--Menu-reading lists-->
+          <!--Menu-links to reading lists-->
           <div class="sidenav-item">
             <div class="light"></div>
             <div class="licon">
@@ -57,7 +60,7 @@
             </div>
             <a class="menu_textbutton" href="new-reading-list/index.html">Reading Lists</a>
           </div>
-          <!--Menu-clock-->
+          <!--Menu-links to timer-->
           <div class="sidenav-item">
             <div class="light"></div>
             <div class="licon">
@@ -73,10 +76,10 @@
 
 
       </div>
-    </div>
+    </nav>
     <!--side menu-->
 
-    <!--up menu-->
+    <!--up menu for user to play music-->
     <div class="upnav_container">
       <!--Spotify music lists embeded-->
       <div class="embedded_music_player">
@@ -85,42 +88,43 @@
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
       </div>
 
-
     </div>
     <!--up menu-->
 
-    <div class="main_container">
+    <!--main content-->
+    <main class="main_container">
+
+      <!--Section that provides five playlists for user to choose from that would shows on the up nav-->
       <div class="playlist-choice">
         <p>Choose your playlist</p>
 
 
         <div class="playlist-box">
           <ul class="playlist">
+            <!--Playlist1-pink-->
             <li>
               <iframe src="https://open.spotify.com/embed/playlist/6mRYwA32FHVrHHy6lW1bAu?utm_source=generator"
                 height="180" frameBorder="0" allowfullscreen=""
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
               <button class="playlist-choose-but" id="butt1" onclick="changeplaylist1()">Choose This</button>
-
             </li>
-
+            <!--Playlist2-yellow-->
             <li>
-
               <iframe id="playlist2"
                 src="https://open.spotify.com/embed/playlist/37i9dQZF1DWSSrwtip3vZP?utm_source=generator" height="180"
                 frameBorder="0" allowfullscreen=""
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
               <button class="playlist-choose-but" id="butt2" onclick="changeplaylist2()">Choose This</button>
-
             </li>
+            <!--Playlist3-green-->
             <li>
-
               <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4PP3DA4J0N8?utm_source=generator"
                 height="180" frameBorder="0" allowfullscreen=""
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
               <button class="playlist-choose-but" id="butt3" onclick="changeplaylist3()">Choose This</button>
 
             </li>
+            <!--Playlist4-blue-->
             <li>
 
               <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX7KNKjOK0o75?utm_source=generator"
@@ -129,6 +133,7 @@
               <button class="playlist-choose-but" id="butt4" onclick="changeplaylist4()">Choose This</button>
 
             </li>
+            <!--Playlist5-red-->
             <li>
 
               <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWZVAVMhIe3pV?utm_source=generator"
@@ -137,13 +142,14 @@
               <button class="playlist-choose-but" id="butt5" onclick="changeplaylist5()">Choose This</button>
 
             </li>
+
         </div>
 
       </div>
-
-
       
+      <!--Section that describe how kanban boards could help people and provides the links to kanban boards-->
       <div class="kanbanboardsCreator">
+        <!--Describe how colorful but temporary kanban boards could help and provides the links to it-->
         <div class="temporaryKanban">
           <div class="kanbanDescriptionImg">
             <img src="icon/kanban1.png" alt="plan your day">
@@ -155,6 +161,7 @@
               step to time management!</p>
             <p> #This Kanban board could be easily back to default settings by refresh the page </p>
           </div>
+          <!--Click button to go to kanban board-->
           <button>
             <a class="menu_iconbutton" href="kanban.html">
               <img src="icon/goicon.png" alt="create a board">
@@ -162,6 +169,7 @@
           </button>
         </div>
 
+        <!--Describe how more formal and localstored kanban boards could help and provides the links to it-->
         <div class="localStoredKanban">
           <div class="kanbanDescriptionImg">
             <img src="icon/kanban2.png" alt="manage your time">
@@ -175,6 +183,7 @@
             <p> #All of inputs are going to be saved even if you leave the page
             </p>
           </div>
+          <!--Click button to go to kanban board-->
           <button>
             <a class="menu_iconbutton" href="nullboard/nullboard.html">
               <img src="icon/goicon.png" alt="create a board">
@@ -184,8 +193,8 @@
 
       </div>
 
-    </div>
-
+    </main>
+    <!--main content-->
   </div>
   </div>
   <script src="javascript/index.js"></script>

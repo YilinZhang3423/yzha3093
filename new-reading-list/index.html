@@ -5,10 +5,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Todo list</title>
+
+  <!--title-->
+  <title>Reading lists</title>
+  <!--favicon-->
+  <link rel="icon" type="image/x-icon" href="/icon/readinglistsicon.png">
+
   <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700,900&display=swap" rel="stylesheet" />
+  <!--import css style-->
   <link rel="stylesheet" href="css/main.css" />
   <link href="../css/style_index.css" rel="stylesheet" type="text/css" />
+  <!--import javascript-->
   <script defer src="script.js"></script>
 </head>
 
@@ -17,7 +24,7 @@
 
   <div class="container">
     <!--side menu-->
-    <div class="sidenav_container">
+    <nav class="sidenav_container">
       <div class="nav">
         <!--user's personal information-->
         <div class="user_info">
@@ -71,7 +78,7 @@
 
 
       </div>
-    </div>
+    </nav>
     <!--side menu-->
 
     <!--up menu-->
@@ -86,15 +93,17 @@
 
     </div>
     <!--up menu-->
-    <!-- Reference:https://www.youtube.com/watch?v=W7FaYfuwu70
+
+
+    <!-- Reference:Retrieved from；https://www.youtube.com/watch?v=W7FaYfuwu70
       (https://github.com/kevin-powell/todo-list-collab/tree/master/javascript-finished) -->
     <!--main content-->
-    <div class="main_container">
+    <main class="main_container">
       <div class="all-tasks">
         <h2 class="task-list-title">My Reading lists</h2>
         <ul class="task-list" data-lists></ul>
 
-
+        <!-- create new and saved reading lists section-->
         <form action="" data-new-list-form>
           <input type="text" class="new list" data-new-list-input placeholder="new list name"
             aria-label="new list name" />
@@ -102,14 +111,16 @@
         </form>
       </div>
 
+<!-- URLs in one reading list-->
       <div class="todo-list" data-list-display-container>
+        <!-- reading lists name, urls count, open all button to open the urls saved in this lists at once(grey)-->
         <div class="todo-header">
           <h2 class="list-title" data-list-title> </h2>
           <p class="task-count" data-list-count>3 tasks remaining</p>
           <button class="btn open" aria-label="open links" onclick="openwindow()">Open All</button>
         </div>
-        <!--  -->
 
+        <!-- saved urls and cretae urls section(pink)-->
         <div class="todo-body">
           <div class="tasks" data-tasks></div>
 
@@ -119,7 +130,8 @@
               <!-- <input type="text" data-new-task-input-name class="new task name" placeholder="input new name"
                 aria-label="new task name name" /> -->
 
-                <input type="text" data-new-task-input class="new task" placeholder="input new url"
+              <!-- Create new url for the reading section-->
+              <input type="text" data-new-task-input class="new task" placeholder="input new url"
                 aria-label="new task name" />
 
               <button class="btn create" aria-label="create new task">+</button>
@@ -127,6 +139,7 @@
             </form>
           </div>
 
+          <!-- Delete button to delete reading urls and lists-->
           <div class="delete-stuff">
             <button class="btn delete" data-clear-complete-tasks-button>Clear completed readings</button>
             <button class="btn delete" data-delete-list-button>Delete list</button>
@@ -134,14 +147,13 @@
         </div>
       </div>
 
+    </main>
 
-    </div>
     <template id="task-template">
       <div class="task">
         <input type="checkbox" />
         <label>
           <span class="custom-checkbox"></span>
-          <div class="inputnames"></div>
           <div class="inputlinks"></div>
         </label>
       </div>

@@ -4,6 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
+  <!--title-->
+  <title>Kanban-temporary(without localStorage)-have add task lists section</title>
+  <!--favicon-->
+  <link rel="icon" type="image/x-icon" href="/icon/kanban-without.png">
 
   <!--Google fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,10 +22,11 @@
 <body>
   <div class="container">
     <!--        Up nav for playlist section   -->
-    <div class="upnav">
+    <nav class="upnav">
       <!--       return to dashboard    -->
       <a class="menu_iconbutton" href="index.html">
-        <img class="iconimg" src="icon/backicon.png" width='50px' height='50px' alt="Dashboard icon" onclick="alertforexit()">
+        <img class="iconimg" src="icon/backicon.png" width='50px' height='50px' alt="Dashboard icon"
+          onclick="alertforexit()">
       </a>
       <!--       music playlist    -->
       <div class="embedded_music_player">
@@ -29,24 +34,26 @@
           height="80" frameBorder="0" allowfullscreen=""
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
       </div>
-      
-    </div>
+
+    </nav>
+
+
+    <!-- Inspired by:Creating a Kanban Board with HTML, CSS & JavaScript. Retrieved from: https://karthikdevarticles.com/creating-a-kanban-board-with-html-css-and-javascript#heading-iteration-1 -->
     <!--       Main content for kanbans section   -->
     <div class="kanban-board">
 
-      <!--        Defult to-do block   -->
-
+      <!--        Defult to-do block  (red) -->
       <div class="kanban-block" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
         <div class="kanban-block-header">
           <input type="text" value='To do'>
         </div>
-
+        <!--        Click button to get create new task section   -->
         <div class="task-button-block">
           <button id="task-button" onclick="createTask()">Create new task</span>
         </div>
 
         <!--        Defult task block(task1/2) for testing   -->
-        <!--    task1    -->
+        <!--  Defult  task1    -->
         <div class="task" id="task1" draggable="true" ondragstart="drag(event)">
           <span class="task-hearder">
             <p class='task-name'>Task 1</p>
@@ -60,7 +67,7 @@
           <p class='priority-rating'>High</p>
         </div>
 
-        <!--    task2    -->
+        <!--  Defult  task2    -->
         <div class="task" id="task2" draggable="true" ondragstart="drag(event)">
           <span class="task-hearder">
             <p class='task-name'>Task 2</p>
@@ -80,7 +87,7 @@
 
 
 
-      <!--      Defult in-progress block   -->
+      <!--      Defult in-progress block (yellow)  -->
 
       <div class="kanban-block" id="inprogress" ondrop="drop(event)" ondragover="allowDrop(event)">
         <div class="kanban-block-header">
@@ -91,7 +98,7 @@
       </div>
 
 
-      <!--      Defult done block   -->
+      <!--      Defult done block  (green) -->
       <div class="kanban-block" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
         <div class="kanban-block-header">
           <input type="text" value='Done'>
@@ -102,7 +109,7 @@
 
     </div>
 
-    <!--      Added new block   -->
+    <!--      Added new block button   -->
     <div id="new">
       <button id="add-block" onclick="addblock()">
         <img src="icon/addblockicon.png" alt='add-new-block-icon'>
@@ -158,6 +165,7 @@
   <ul id="tasklist">
   </ul> -->
 
+  <!--  Adding new block task block, hidden when the other block showing  -->
     <div class="create-new-task-block" id="create-new-task-block">
       <strong>New Task</strong>
       <span class="form-row">
@@ -184,7 +192,7 @@
         <br>
       </span>
 
-
+    <!-- Priority input -->
       <span class="form-row">
         <select name="prority" id="priorityInput">
           <option value="">Rates task prority</option>
@@ -203,7 +211,6 @@
   </div>
   </div>
   <script src="javascript/kanban.js"></script>
-
   <script src="javascript/addtask.js"></script>
   <script src="javascript/playlistrefresh.js"></script>
 
