@@ -103,8 +103,7 @@
 
       <div class="todo-list" data-list-display-container>
         <div class="todo-header">
-          <h2 class="list-title" data-list-title> <button class="btn open" aria-label="open links"
-              onclick="openwindow()">++</button></h2>
+          <h2 class="list-title" data-list-title> </h2>
           <p class="task-count" data-list-count>3 tasks remaining</p>
           <button class="btn open" aria-label="open links" onclick="openwindow()">Open All</button>
         </div>
@@ -115,7 +114,11 @@
 
           <div class="new-task-creator">
             <form action="" data-new-task-form>
-              <input type="text" data-new-task-input class="new task" placeholder="input new url"
+              <!-- Attempt to add name section for each input urls -->
+              <!-- <input type="text" data-new-task-input-name class="new task name" placeholder="input new name"
+                aria-label="new task name name" /> -->
+
+                <input type="text" data-new-task-input class="new task" placeholder="input new url"
                 aria-label="new task name" />
 
               <button class="btn create" aria-label="create new task">+</button>
@@ -124,7 +127,7 @@
           </div>
 
           <div class="delete-stuff">
-            <button class="btn delete" data-clear-complete-tasks-button>Clear completed tasks</button>
+            <button class="btn delete" data-clear-complete-tasks-button>Clear completed readings</button>
             <button class="btn delete" data-delete-list-button>Delete list</button>
           </div>
         </div>
@@ -137,6 +140,7 @@
         <input type="checkbox" />
         <label>
           <span class="custom-checkbox"></span>
+          <div class="inputnames"></div>
           <div class="inputlinks"></div>
         </label>
       </div>

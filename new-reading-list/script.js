@@ -6,17 +6,23 @@ window.addEventListener('load', (event) => {
 });
 
 //The function to open all the links in the list
-function openwindow(){
-for(let i = 0 ; i < linkstoopen.length ; i++){
-  window.open(linkstoopen[i], '_wnd' + i);  
-}
+function openwindow() {
+
+  // document.location.reload(true);
+  for (let i = 0; i < linkstoopen.length; i++) {
+    window.open(linkstoopen[i], '_wnd' + i);
+  }
+  console.log(linkstoopen)
+  // console.log(nametosave)
 
 }
 
-  
+
 
 //A array to save all the user input value(url string)
 const linkstoopen = [];
+//Attempt to add name section for each input urls
+// const nametosave = [];
 
 
 const listsContainer = document.querySelector('[data-lists]')
@@ -30,6 +36,8 @@ const tasksContainer = document.querySelector('[data-tasks]')
 const taskTemplate = document.getElementById('task-template')
 const newTaskForm = document.querySelector('[data-new-task-form]')
 const newTaskInput = document.querySelector('[data-new-task-input]')
+//Attempt to add name section for each input urls
+// const newTaskInputname = document.querySelector('[data-new-task-input-name]')
 const clearCompleteTasksButton = document.querySelector('[data-clear-complete-tasks-button]')
 
 const LOCAL_STORAGE_LIST_KEY = 'task.lists'
@@ -42,8 +50,9 @@ listsContainer.addEventListener('click', e => {
     selectedListId = e.target.dataset.listId
     saveAndRender()
   }
-   linkstoopen.length = 0;
-   document.location.reload(true);
+  //Clear out the array that save links (clear out links from other list) and reloads the links showing in this list
+  linkstoopen.length = 0;
+  document.location.reload(true);
 
 })
 
@@ -82,6 +91,11 @@ newListForm.addEventListener('submit', e => {
 newTaskForm.addEventListener('submit', e => {
   e.preventDefault()
   const taskName = newTaskInput.value
+  //Attempt to add name section for each input urls
+  // const taskNamename = newTaskInputname.value
+  // const taskn = createTask(taskNamename)
+  // newTaskInputname.value = null
+  // selectedList.tasks.push(taskn)
   if (taskName == null || taskName === '') return
   const task = createTask(taskName)
   newTaskInput.value = null
@@ -97,6 +111,8 @@ function createList(name) {
 function createTask(name) {
   return { id: Date.now().toString(), name: name, complete: false }
 }
+
+
 
 function saveAndRender() {
   save()
@@ -137,10 +153,35 @@ function renderTasks(selectedList) {
     label.htmlFor = task.id
     links.append(task.name);
 
-//Save the input value to links to open
-    linkstoopen.push(task.name);
-
+    //Save the input value to links to open
+    if (!linkstoopen.includes(task.name)) {
+      // ✅ only runs if value not in array
+      linkstoopen.push(task.name);
+    }
     tasksContainer.appendChild(taskElement);
+//Attempt to add name section for each input urls
+    // selectedList.tasks.forEach(taskn => {
+    //   const taskElementn = document.importNode(taskTemplate.content, true)
+    //   const checkboxn = taskElementn.querySelector('.new task name')
+    //   checkboxn.id = taskn.id
+    //   checkboxn.checked = taskn.complete
+    //   const labeln = taskElement.querySelector('label')
+    //   const names = taskElement.querySelector('.inputnames')
+
+
+    //   labeln.htmlFor = taskn.id
+    //   names.append(taskn.name);
+
+    //   //Save the input value to links to open
+    //   if (!nametosave.includes(taskn.name)) {
+    //     // ✅ only runs if value not in array
+    //     nametosave.push(taskn.name);
+    //   }
+
+
+    //   tasksContainern.appendChild(taskElement);
+    // })
+
   })
 }
 

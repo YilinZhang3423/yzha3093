@@ -57,7 +57,25 @@
       width: 100%;
       margin: 5px 0;
       color: white;
+
+      font-family: 'Montserrat', sans-serif;
+  margin: 0.8rem 0rem 0.1rem 0rem;
+  background-color: white;
+  width: 100%;
+  border: 0.1rem solid #f44336;
+  padding: 0.5rem 2.7rem;
+
+  font-size: 1rem;
+  color: #f44336;
+  box-shadow: 5px 5px #b92722;
     }
+
+    form button:hover {
+      background-color: #f44336;
+      color: white;
+      box-shadow: 2px 2px #b92722;
+    }
+
     .start {
       border-radius: 25px;
       background: #eb5a56;
@@ -175,7 +193,7 @@
 
     @media screen and (max-width: 768px) {
       .main_container{
-        background-color: #5659eb;
+        
         display: grid;
         grid-template-columns: 1fr ;
         grid-template-rows: 80px 1fr 0.1fr 0.6fr;
